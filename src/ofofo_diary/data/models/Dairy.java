@@ -5,9 +5,23 @@ import java.util.List;
 
 public class Dairy {
 
-    private String username;
+    private String userName;
     private String password;
     private boolean isLocked;
+    private List<Entry> entries = new ArrayList<>();
+
+    public Dairy() {
+
+    }
+
+    public Dairy(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+        entries = new ArrayList<>();
+    }
+
+    public Dairy(Dairy myDairy) {
+    }
 
     public List<Entry> getEntries() {
         return entries;
@@ -21,12 +35,12 @@ public class Dairy {
         return isLocked;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public void setLocked(boolean locked) {
@@ -40,6 +54,4 @@ public class Dairy {
     public void setPassword(String password){
         this.password = password;
     }
-
-    private List<Entry> entries = new ArrayList<Entry>();
 }
