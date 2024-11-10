@@ -1,11 +1,11 @@
-package ofofo_diary.data.repositories;
+package ofofo_dairy.data.repositories;
 
-import ofofo_diary.data.models.Dairy;
+import ofofo_dairy.data.models.Dairy;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DairyRepositoryImpl implements DairyRepository {
+public class DairyRepositoryImpl implements DairyRepository{
 
     private static List<Dairy> dairies = new  ArrayList<>();
     private long count = 0;
@@ -62,7 +62,7 @@ public class DairyRepositoryImpl implements DairyRepository {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return getSize() == - 1;
     }
 
     @Override

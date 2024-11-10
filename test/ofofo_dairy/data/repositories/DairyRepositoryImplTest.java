@@ -1,7 +1,6 @@
 package ofofo_dairy.data.repositories;
 
-import ofofo_diary.data.models.Dairy;
-import ofofo_diary.data.repositories.DairyRepositoryImpl;
+import ofofo_dairy.data.models.Dairy;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,13 +17,11 @@ public class DairyRepositoryImplTest {
 
     @Test
     public void newRepository_countIs_IsEmpty_orZeroTest(){
-        dairy.isEmpty();
         assertEquals(0, dairy.count());
     }
 
     @Test
     public void newRepository_countIs_notEmpty_andCountOneTest(){
-        dairy.isEmpty();
         assertEquals(0, dairy.count());
         Dairy myDairy = new Dairy("Sammy", "passcode");
         dairy.save(new Dairy(myDairy));
@@ -34,7 +31,6 @@ public class DairyRepositoryImplTest {
 
     @Test
     public void newRepository_count_addTwo_entries_toRepositoryTest(){
-        dairy.isEmpty();
         assertEquals(0, dairy.count());
         Dairy myDairy = new Dairy("Samson", "CorrectGuy");
         dairy.save(myDairy);
@@ -47,7 +43,6 @@ public class DairyRepositoryImplTest {
 
     @Test
     public void newRepository_count_addTwo_andDelete_One_Entries_fromRepositoryTest(){
-        dairy.isEmpty();
         assertEquals(0, dairy.count());
         Dairy myDairy = new Dairy("Samson", "CorrectGuy");
         dairy.save(myDairy);
@@ -63,25 +58,26 @@ public class DairyRepositoryImplTest {
     @Test
 
     public void newRepository_count_addTwo_andFindEntriesById_inRepositoryTest(){
-        dairy.isEmpty();
         assertEquals(0, dairy.count());
         Dairy myDairy = new Dairy("Samson", "CorrectGuy");
         dairy.save(myDairy);
         assertEquals(1, dairy.count());
-        Dairy myDairy2 = new Dairy("Samiyrone", "CorrectBoy");
+        Dairy myDairy2 = new Dairy("Sammy", "password");
         dairy.save(myDairy2);
-        assertEquals(2, dairy.count());
-        Dairy searchForUser = dairy.findById("Samibyrone");
+        Dairy myDairy3 = new Dairy("Sami_byron", "coderMan");
+        dairy.save(myDairy3);
+        assertEquals(3, dairy.count());
+        Dairy searchForUser = dairy.findById("Sammy");
         System.out.println(searchForUser);
-        assertEquals(myDairy, searchForUser);
-        assertEquals(searchForUser.toString(), "Samibyrone");
-        assertEquals(searchForUser.getUserName(), "Samibyrone");
-        assertEquals(2, dairy.getSize());
+        assertEquals(searchForUser, myDairy2);
+        assertEquals(searchForUser.toString(), myDairy2.toString());
+        assertEquals("Sammy",searchForUser.getUserName());
+        assertEquals(3, dairy.count());
+        assertEquals(3, dairy.getSize());
     }
 
     @Test
     public void newRepository_canDelete_existingEntries_fromRepositoryTest(){
-        dairy.isEmpty();
         assertEquals(0, dairy.count());
         Dairy myDairy = new Dairy("Samson", "CorrectGuy");
         dairy.save(myDairy);
@@ -90,4 +86,17 @@ public class DairyRepositoryImplTest {
         assertEquals(0, dairy.count());
         assertEquals(dairy.getSize(), 0);
     }
+
+    @Test
+    public void newRepository_canFindByTitle_fromExisting_repositoryTest(){
+        assertEquals(0, dairy.count());
+        Dairy myDairy = new Dairy("Sam", "CorrectGuy");
+        dairy.save(myDairy);
+        dairy.findById("Sam");
+        assertEquals(1, dairy.getSize());
+        assertEquals(1, dairy.count());
+    }
+
+//    @Test
+//    public void new
 }

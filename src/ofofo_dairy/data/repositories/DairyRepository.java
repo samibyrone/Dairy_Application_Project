@@ -1,6 +1,6 @@
-package ofofo_diary.data.repositories;
+package ofofo_dairy.data.repositories;
 
-import ofofo_diary.data.models.Dairy;
+import ofofo_dairy.data.models.Dairy;
 
 import java.util.List;
 

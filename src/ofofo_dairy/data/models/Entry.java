@@ -1,4 +1,4 @@
-package ofofo_diary.data.models;
+package ofofo_dairy.data.models;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package ofofo_diary.data.models;
+package ofofo_dairy.data.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,7 @@ public class Dairy {
     }
 
     public Dairy(Dairy myDairy) {
+
     }
 
     public List<Entry> getEntries() {
