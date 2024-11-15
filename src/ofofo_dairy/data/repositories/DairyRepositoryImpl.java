@@ -22,7 +22,7 @@ public class DairyRepositoryImpl implements DairyRepository{
     }
 
     @Override
-    public List<Dairy> findByTitle(String tittle) {
+    public List<Dairy> findByTitle(String title) {
         return List.of();
     }
 
