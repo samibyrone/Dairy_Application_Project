@@ -55,4 +55,7 @@ public class Dairy {
     public void setPassword(String password){
         this.password = password;
     }
+
+    public void setIsLocked(boolean b) {
+    }
 }

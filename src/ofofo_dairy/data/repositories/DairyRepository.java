@@ -14,5 +14,5 @@ public interface DairyRepository {
     boolean isEmpty();
     int getSize();
 
-    Dairy validatePassword(String lowerCase);
+        Dairy validatePassword(String lowerCase);
 }

@@ -18,6 +18,7 @@ class DiaryServiceImplTest {
         public void setUp() {
             diaryService = new DiaryServiceImpl();
         }
+
         @Test
         public void test_That_No_Member_Is_Registered_And_User_Count_Is_Zero(){
             DiaryService diaryService = new DiaryServiceImpl();
